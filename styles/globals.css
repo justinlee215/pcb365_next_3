@@ -876,3 +876,8 @@ input a {
   height: 3rem;
   border-radius: 3px;
 }
+
+.barchart,
+.doughnutchart {
+  width: 500px;
+}
