@@ -35,8 +35,8 @@ export default function NavBar({
     <Navbar
       sticky="top"
       className={["navbar", `navbar-${size}`, mode].join(" ")}
-      expand="lg"
-      variant="dark"
+      // expand="lg"
+      // variant="dark"
     >
       <Container fluid>
         <Link href="/">
@@ -113,13 +113,7 @@ export default function NavBar({
               </Link>
             </NavDropdown>
             <Link href="/contactus">
-              <Nav.Link
-                href="/"
-                style={{
-                  minWidth: "100px",
-                }}
-                className="contactus"
-              >
+              <Nav.Link href="/" className="contactus">
                 Contact Us
               </Nav.Link>
             </Link>
