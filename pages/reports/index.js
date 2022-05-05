@@ -23,10 +23,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function Reports({ canadaCustomsInvoices, usCustomsInvoices }) {
-  console.log("canada: ", canadaCustomsInvoices);
-  console.log("US: ", usCustomsInvoices);
+// export default function Reports({ canadaCustomsInvoices, usCustomsInvoices }) {
+//   console.log("canada: ", canadaCustomsInvoices);
+//   console.log("US: ", usCustomsInvoices);
 
+export default function Reports() {
   const data = [
     {
       name: "Page A",
@@ -160,21 +161,32 @@ export default function Reports({ canadaCustomsInvoices, usCustomsInvoices }) {
   );
 }
 
-export async function getStaticProps() {
-  // const canadaCustomsInvoices = await CanadaCustomsInvoice.find({})
+// export async function getStaticProps() {
 
-  const res = await fetch(
-    "http://localhost:3000/api/forms/CanadaCustomsInvoice"
-  );
-  const canadaCustomsInvoices = await res.json();
+//   const canadaCustomsInvoices = await fetch(
+//     "http://localhost:3000/api/forms/CanadaCustomsInvoice"
+//   )
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .catch((err) => {
+//       console.log("err: ", err);
+//     });
 
-  const res2 = await fetch("http://localhost:3000/api/forms/USCustomsInvoice");
-  const usCustomsInvoices = await res2.json();
+//   const usCustomsInvoices = await fetch(
+//     "http://localhost:3000/api/forms/USCustomsInvoice"
+//   )
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .catch((err) => {
+//       console.log("err: ", err);
+//     });
 
-  return {
-    props: {
-      canadaCustomsInvoices: canadaCustomsInvoices.data.reverse(),
-      usCustomsInvoices: usCustomsInvoices.data.reverse(),
-    },
-  };
-}
+//   return {
+//     props: {
+//       canadaCustomsInvoices: canadaCustomsInvoices.data.reverse(),
+//       usCustomsInvoices: usCustomsInvoices.data.reverse(),
+//     },
+//   };
+// }

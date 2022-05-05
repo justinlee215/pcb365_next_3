@@ -91,10 +91,7 @@ export const data3 = {
   ],
 };
 
-export default function ContactUs({
-  canadaCustomsInvoices,
-  usCustomsInvoices,
-}) {
+export default function ({ canadaCustomsInvoices, usCustomsInvoices }) {
   console.log("canada: ", canadaCustomsInvoices);
   console.log("US: ", usCustomsInvoices);
 
@@ -157,23 +154,4 @@ export default function ContactUs({
       </main>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  // const canadaCustomsInvoices = await CanadaCustomsInvoice.find({})
-
-  const res = await fetch(
-    "http://localhost:3000/api/forms/CanadaCustomsInvoice"
-  );
-  const canadaCustomsInvoices = await res.json();
-
-  const res2 = await fetch("http://localhost:3000/api/forms/USCustomsInvoice");
-  const usCustomsInvoices = await res2.json();
-
-  return {
-    props: {
-      canadaCustomsInvoices: canadaCustomsInvoices.data.reverse(),
-      usCustomsInvoices: usCustomsInvoices.data.reverse(),
-    },
-  };
 }

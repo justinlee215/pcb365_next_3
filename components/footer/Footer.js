@@ -2,86 +2,85 @@ import React from "react";
 import Image from "next/image";
 import logo from "../../public/images/logo_color.png";
 import favicon from "../../public/favicon.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className="footer">
       <div className="container" id="footer">
-        <footer className="pt-1 mt-5 my-md-5 pt-md-5 border-top ps-4">
+        <footer className="pt-1 mt-5 my-md-5 pt-md-5 border-top ps-4 ">
           <div className="row">
             <div className="col-12 col-md">
-              <a className="navbar-brand" href="/">
-                {" "}
-                <Image src={logo} alt="PCB Logo" width={250} height={78} />
-              </a>
+              <Link className="navbar-brand" href="/">
+                <a>
+                  <Image src={logo} alt="PCB Logo" width={250} height={78} />
+                </a>
+              </Link>
               <small className="d-block mb-3 text-muted ps-2">
                 &copy; 2022
               </small>
             </div>
             <div className="col-6 col-md ps-1">
-              <h5 className="mb-2">Features</h5>
-              <ul className="list-unstyled text-small">
-                <li className="mb-1">Log in </li>
-                <li className="mb-1">Sign up </li>
-                <li className="mb-1 text-muted">eForms</li>
-                <li className="mb-1 text-muted">Shipment</li>
-                <li className="mb-1">Reports </li>
-                <li className="mb-1">Documentation </li>
-                <li className="mb-1">Your eForms List</li>
-                <li className="mb-1">Your Documentation</li>
-                {/* <li className="mb-1">Your Cart</li> */}
+              <h5 className="mb-3">Features</h5>
+              <ul className="list-unstyled ">
+                <li className="mb-3">Log in </li>
+                <li className="mb-3">Sign up </li>
+                <li className="mb-3 text-muted">eForms</li>
+                <li className="mb-3 text-muted">Shipment</li>
+                <li className="mb-3">Reports </li>
+                <li className="mb-3">Documentation </li>
+                <li className="mb-3">Your eForms List</li>
+                <li className="mb-3">Your Documentation</li>
               </ul>
             </div>
             <div className="col-6 col-md">
-              <h5 className="mb-2">Resources</h5>
-              <ul className="list-unstyled text-small">
-                <li className="mb-2">
+              <h5 className="mb-3">Resources</h5>
+              <ul className="list-unstyled ">
+                <li className="mb-3">
                   Photos from{" "}
-                  <a
+                  <Link
                     className="text-muted"
                     href="https://www.unsplash.com/"
                     target="_blank"
                   >
                     Unsplash
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">Tables</li>
-                <li className="mb-2">
+                <li className="mb-3">Tables</li>
+                <li className="mb-3">
                   Join our teams!{" "}
-                  <a className="text-muted" href="" target="_blank">
+                  <Link className="text-muted" href="/" target="_blank">
                     {" "}
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
                   {" "}
-                  <a className="text-muted" href="" target="_blank">
-                    {" "}
+                  <Link className="text-muted" href="/" target="_blank">
+                    {/* {" "} */}
                     Contacts
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="col-6 col-md ps-2">
-              <h5 className="mb-2">About Us</h5>
-              <ul className="list-unstyled text-small">
+              <h5 className="mb-3">About Us</h5>
+              <ul className="list-unstyled ">
                 <li>
                   <div className="text-muted mt-2 mb-4 d-flex">
-                    <a href="" target="_blank">
+                    <Link href="/" target="_blank">
                       <span className="mr-1">© PCB365 </span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="mb-4">
-                  <a target="_blank" href="">
+                  <Link target="_blank" href="/">
                     <span className="mr-2">PCB</span>
-                    <i className="g"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mt-2 mb-4">
-                  <a target="_blank" href="">
+                  <Link target="_blank" href="/">
                     <span className="mr-2">PCBUSA</span>
-                    <i className=""></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

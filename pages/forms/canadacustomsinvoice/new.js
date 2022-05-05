@@ -13,7 +13,7 @@ import styles from "./canadacustomsinvoice.module.css";
 
 import { ArrowRightShort, ArrowLeftShort } from "react-bootstrap-icons";
 
-export default function CanadaCustomsInvoice({ ...props }) {
+export default function CanadaCustomsInvoiceNew({ ...props }) {
   // console.log("rendering from CanadaCustomsInvoice", count)
 
   //steps indicating where button appears on different steps of forms
@@ -348,11 +348,11 @@ export default function CanadaCustomsInvoice({ ...props }) {
   // }
 
   const fieldGroups = [
-    <ShipperFields step={step} />,
-    <ExporterFields step={step} />,
-    <ConsigneeFields step={step} />,
-    <BuyerFields step={step} />,
-    <GoodsFields step={step} />,
+    <ShipperFields step={step} key={step} />,
+    <ExporterFields step={step} key={step} />,
+    <ConsigneeFields step={step} key={step} />,
+    <BuyerFields step={step} key={step} />,
+    <GoodsFields step={step} key={step} />,
   ];
 
   return (

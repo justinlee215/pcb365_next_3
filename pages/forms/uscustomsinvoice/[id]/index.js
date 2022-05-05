@@ -76,7 +76,7 @@ export default function ({ usCustomsInvoice }) {
             </Button>
           </div>
         </div>
-        <h2>Shipper Name: {shipperName} </h2>
+        <h2>Shipper Nam: {shipperName} </h2>
         <div className={styles.grid}>
           <div className={styles.formDetail}>
             <div className={styles.formLine}>
@@ -152,38 +152,40 @@ export default function ({ usCustomsInvoice }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const res = await fetch(`http://localhost:3000/api/forms/USCustomsInvoice`)
-//   const data = await res.json()
+export async function getStaticPaths() {
+  const res = await fetch(`http://localhost:3000/api/forms/USCustomsInvoice`);
+  const data = await res.json();
 
-//   console.log("data: ", data)
+  console.log("data: ", data);
 
-//   const paths = data.data.map(invoice => {
-//     return {
-//       params: { id: invoice._id.toString()}
-//     }
-//   })
+  const paths = data.data.map((invoice) => {
+    return {
+      params: { id: invoice._id.toString() },
+    };
+  });
 
-//   console.log("paths: ", paths)
-//   return {
-//     paths,
-//     fallback: false
-//   }
-// }
+  console.log("paths: ", paths);
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
-// export async function getStaticProps(context) {
-//   const id = context.params.id
+export async function getStaticProps(context) {
+  const id = context.params.id;
 
-//   console.log("id: ", id)
+  console.log("id: ", id);
 
-//   const res = await fetch(`http://localhost:3000/api/forms/USCustomsInvoice/${id}`)
-//   const usCustomsInvoice = await res.json()
+  const res = await fetch(
+    `http://localhost:3000/api/forms/USCustomsInvoice/${id}`
+  );
+  const usCustomsInvoice = await res.json();
 
-//   console.log("usCustomsInvoice: ", usCustomsInvoice)
-//   return {
-//     props:  { usCustomsInvoice: usCustomsInvoice.data }
-//   }
-// }
+  console.log("usCustomsInvoice: ", usCustomsInvoice);
+  return {
+    props: { usCustomsInvoice: usCustomsInvoice.data },
+  };
+}
 
 // export async function getServerSideProps({ params: { id } }) {
 //     console.log("req: ", id)
@@ -196,17 +198,17 @@ export default function ({ usCustomsInvoice }) {
 //     return { props: { usCustomsInvoice: invoice } }
 // }
 
-export async function getServerSideProps({ params: { id } }) {
-  const res = await fetch(
-    `http://localhost:3000/api/forms/USCustomsInvoice/${id}`
-  );
-  const usCustomsInvoice = await res.json();
+// export async function getServerSideProps({ params: { id } }) {
+//   const res = await fetch(
+//     `http://localhost:3000/api/forms/USCustomsInvoice/${id}`
+//   );
+//   const usCustomsInvoice = await res.json();
 
-  console.log("usCustomsInvoice: ", usCustomsInvoice);
-  return {
-    props: { usCustomsInvoice: usCustomsInvoice.data },
-  };
-}
+//   console.log("usCustomsInvoice: ", usCustomsInvoice);
+//   return {
+//     props: { usCustomsInvoice: usCustomsInvoice.data },
+//   };
+// }
 
 // export async function getStaticProps(context) {
 //   const id = context.params.id
