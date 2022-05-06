@@ -166,15 +166,16 @@ export default function LogIn() {
               )
             )}
             <Link href="/">
-              <Image
-                src={logo}
-                alt="PCB Logo"
-                width={125}
-                height={39}
-                className={styles.logo}
-              />
+              <a>
+                <Image
+                  src={logo}
+                  alt="PCB Logo"
+                  width={125}
+                  height={39}
+                  className={styles.logo}
+                />
+              </a>
             </Link>
-
             {transition2((style, item) =>
               item ? (
                 <animated.h2 style={style}>Reset your password</animated.h2>
@@ -182,7 +183,6 @@ export default function LogIn() {
                 ""
               )
             )}
-
             {transition2((style, item) =>
               item ? "" : <animated.h2 style={style}>Log in</animated.h2>
             )}

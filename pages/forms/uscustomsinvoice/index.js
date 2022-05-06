@@ -7,13 +7,13 @@ import { Button, Alert } from "react-bootstrap";
 
 import styles from "./uscustomsinvoice.module.css";
 
-// import { dbConnect } from '../../../utils/dbConnect'
-// import USCustomsInvoice from '../../../models/USCustomsInvoice'
+// import { dbConnect } from "../../../utils/dbConnect";
+// import USCustomsInvoice from "../../../models/USCustomsInvoice";
 
 export default function ({ usCustomsInvoices }) {
   console.log("usCustomsInvoices: ", usCustomsInvoices);
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>US Customs Invoice</title>
         <meta name="description" content="Complex Forms" />
@@ -68,21 +68,22 @@ export async function getStaticProps() {
   const usCustomsInvoices = await res.json();
 
   console.log("data fetched: ", usCustomsInvoices);
+
   return {
     props: { usCustomsInvoices: usCustomsInvoices.data.reverse() },
   };
 }
 
 // export async function getServerSideProps() {
-//     await dbConnect()
+//   await dbConnect();
 
-//     const result = await USCustomsInvoice.find({})
+//   const result = await USCustomsInvoice.find({});
 
-//     const usCustomsInvoices = result.reverse().map((doc) => {
-//       const invoice = doc.toObject()
-//       invoice._id = doc._id.toString()
-//       return invoice
-//     })
+//   const usCustomsInvoices = result.reverse().map((doc) => {
+//     const invoice = doc.toObject();
+//     invoice._id = doc._id.toString();
+//     return invoice;
+//   });
 
-//     return { props: { usCustomsInvoices: usCustomsInvoices } }
+//   return { props: { usCustomsInvoices: usCustomsInvoices } };
 // }

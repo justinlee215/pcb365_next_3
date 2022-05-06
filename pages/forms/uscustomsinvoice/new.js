@@ -13,7 +13,7 @@ import styles from "./uscustomsinvoice.module.css";
 
 import { ArrowRightShort, ArrowLeftShort } from "react-bootstrap-icons";
 
-export default function USCustomsInvoice({ ...props }) {
+export default function USCustomsInvoiceNew({ ...props }) {
   //steps indicating where button appears on different steps of forms
   const [step, setStep] = useState(0);
 
@@ -346,11 +346,11 @@ export default function USCustomsInvoice({ ...props }) {
   // }
 
   const fieldGroups = [
-    <ShipperFields step={step} />,
-    <ExporterFields step={step} />,
-    <ConsigneeFields step={step} />,
-    <BuyerFields step={step} />,
-    <GoodsFields step={step} />,
+    <ShipperFields step={step} key={step + 1000} />,
+    <ExporterFields step={step} key={step + 1000} />,
+    <ConsigneeFields step={step} key={step + 1000} />,
+    <BuyerFields step={step} key={step + 1000} />,
+    <GoodsFields step={step} key={step + 1000} />,
   ];
 
   return (

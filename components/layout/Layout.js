@@ -8,13 +8,13 @@ import NavBar from "../navBar/NavBar";
 export default function Layout({ children }) {
   const [progress, setProgress] = useState(0);
 
-  const updateProgressHandler = setInterval(() => {
-    if (progress >= 100) {
-      setProgress(100);
-      clearInterval(updateProgressHandler);
-    }
-    setProgress((s) => s + 1);
-  }, 50);
+  // const updateProgressHandler = setInterval(() => {
+  //   if (progress >= 100) {
+  //     setProgress(100);
+  //     clearInterval(updateProgressHandler);
+  //   }
+  //   setProgress((s) => s + 1);
+  // }, 0);
 
   return (
     <div className="appWrapper">

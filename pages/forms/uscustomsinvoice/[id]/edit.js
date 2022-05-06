@@ -357,11 +357,11 @@ export default function EditUSCustomsInvoice({ USCustomsInvoice }) {
   // }
 
   const fieldGroups = [
-    <ShipperFields step={step} />,
-    <ExporterFields step={step} />,
-    <ConsigneeFields step={step} />,
-    <BuyerFields step={step} />,
-    <GoodsFields step={step} />,
+    <ShipperFields step={step} key={step} />,
+    <ExporterFields step={step} key={step} />,
+    <ConsigneeFields step={step} key={step} />,
+    <BuyerFields step={step} key={step} />,
+    <GoodsFields step={step} key={step} />,
   ];
 
   return (

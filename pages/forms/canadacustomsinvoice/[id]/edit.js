@@ -339,25 +339,20 @@ export default function EditCanadaCustomsInvoice({ canadaCustomsInvoice }) {
     </section>
   );
 
-  // const Reference = () =>(
-  //   <footer >
-  //     {renderMarkers()}
-  //   </footer>
-  // )
+  const Reference = () => <footer>{renderMarkers()}</footer>;
 
-  // function renderMarkers(){
-  //   let markers = []
-  //   for(let i=0; i < fieldGroups.length; i++)
-  //     markers.push(<span key={i} />)
-  //   return markers
-  // }
+  function renderMarkers() {
+    let markers = [];
+    for (let i = 0; i < fieldGroups.length; i++) markers.push(<span key={i} />);
+    return markers;
+  }
 
   const fieldGroups = [
-    <ShipperFields step={step} />,
-    <ExporterFields step={step} />,
-    <ConsigneeFields step={step} />,
-    <BuyerFields step={step} />,
-    <GoodsFields step={step} />,
+    <ShipperFields step={step} key={step} />,
+    <ExporterFields step={step} key={step} />,
+    <ConsigneeFields step={step} key={step} />,
+    <BuyerFields step={step} key={step} />,
+    <GoodsFields step={step} key={step} />,
   ];
 
   return (
@@ -371,7 +366,7 @@ export default function EditCanadaCustomsInvoice({ canadaCustomsInvoice }) {
         <h1>Edit Canada Customs Invoice</h1>
         <Form onSubmit={handleSubmit(onSubmit)} className="fillupForm">
           {fieldGroups[step]}
-          <Buttons />
+          {/* <Buttons /> */}
           {/* <Reference/> */}
         </Form>
       </main>
